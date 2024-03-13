@@ -1,0 +1,210 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, Arial;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header.navbar-container {
+  width: 100%;
+  max-width: auto;
+  padding-block: 1rem;
+  margin-inline: auto;
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+header.navbar-container .nav-list ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem 1rem;
+}
+
+header.navbar-container .nav-list li {
+  list-style-type: none;
+}
+
+header.navbar-container .nav-list li a {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 400;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+header.navbar-container .nav-list li:hover a {
+  background-color: #1c4749;
+  color: white;
+}
+
+main.content {
+  display: flex;
+  flex-direction: column;
+}
+
+#greeting-words h1 {
+  /* border: solid;
+  border-width: 10px; */
+  text-align: flex-start;
+  font-size: 41px;
+}
+
+.page1 {
+  padding-top: 90px;
+  padding-bottom: 160px;
+  padding-left: 12px;
+}
+
+.main-aside {
+  display: flex;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex: 1;
+}
+
+aside {
+  flex: 0 0 300px;
+}
+
+article h2 {
+  text-align: center;
+}
+
+.parent-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1200px; /* Sesuaikan lebar sesuai kebutuhan Anda */
+  margin: 20px auto; /* Sesuaikan margin sesuai kebutuhan Anda */
+  gap: 20px;
+}
+
+.child-first-card {
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
+}
+
+.parent-card-aside {
+  display: flex;
+  flex-direction: column;
+  max-width: auto; /* Sesuaikan lebar sesuai kebutuhan Anda */
+  margin: 20px auto; /* Sesuaikan margin sesuai kebutuhan Anda */
+  margin-top: -10px;
+  gap: 20px;
+}
+
+.child-card-aside {
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  height: fit-content;
+  margin-top: -40px;
+}
+
+.social-media-logo-parent {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.social-media-logo-child {
+  padding-right: 10px;
+  font-size: 30px;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(0, auto);
+  gap: 10px;
+}
+
+.portfolio-img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.portfolio-img-aside {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.portfolio-container-4-pic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(0, auto);
+  gap: 10px;
+}
+
+footer {
+  color: white;
+  padding: 40px;
+  background-color: #1c4749;
+  text-align: center;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-aside {
+    display: inline;
+  }
+
+  aside h2 {
+    text-align: center;
+  }
+
+  .portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(0, auto);
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  aside {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    align-items: baseline;
+    line-height: 2rem;
+  }
+}
