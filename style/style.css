@@ -10,6 +10,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
 }
 
 header.navbar-container {
@@ -162,6 +163,10 @@ footer {
 }
 
 @media screen and (max-width: 1200px) {
+  .child-card-aside {
+    margin-top: 0px;
+  }
+
   aside h2 {
     text-align: center;
   }
