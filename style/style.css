@@ -49,6 +49,10 @@ header.navbar-container .nav-list li:hover a {
   color: white;
 }
 
+#judulWeb:hover {
+  transform: rotateX(90 "angle");
+}
+
 #greeting-words h1 {
   /* border: solid;
   border-width: 10px; */
@@ -57,7 +61,7 @@ header.navbar-container .nav-list li:hover a {
 }
 
 .page1 {
-  padding-top: 90px;
+  padding-top: 60px;
   padding-bottom: 160px;
   padding-left: 12px;
 }
@@ -79,6 +83,42 @@ aside {
   flex: 0 0 300px;
 }
 
+#tombolKetuk {
+  position: fixed; /* Posisi fixed untuk mengikuti viewport */
+  bottom: 20px; /* Posisi bawah */
+  right: 20px; /* Posisi kanan */
+  padding: 10px 20px; /* Padding untuk tombol */
+  background: #5e5df0;
+  border-radius: 999px;
+  box-shadow: #5e5df0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+    NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+    EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+#tombolKetuk:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  border-style: solid;
+  border-width: 1px;
+}
+
 article h2 {
   text-align: center;
 }
@@ -93,8 +133,11 @@ article h2 {
 }
 
 .child-first-card {
+  border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgb(242, 242, 242);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   flex-grow: 1;
 }
 
@@ -190,6 +233,16 @@ footer {
   nav ul {
     justify-content: center;
     align-items: center;
+  }
+
+  header.navbar-container .nav-list ul {
+    justify-content: flex-end;
+  }
+
+  .page1 {
+    padding-top: 20px;
+    padding-bottom: 110px;
+    padding-left: 12px;
   }
 
   main {
