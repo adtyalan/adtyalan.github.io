@@ -15,9 +15,9 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      class="flex flex-col py-4 gap-8 sm:flex-row sm:justify-between"
+      class="w-full flex flex-col py-4 gap-8 pb-25 px-30 sm:flex-row sm:justify-between"
     >
-      <p>
+      <p className="w-full sm:w-fit text-center">
         Made with{" "}
         <span
           className="inline-block relative overflow-hidden align-middle"

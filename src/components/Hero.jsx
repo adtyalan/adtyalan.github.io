@@ -10,9 +10,8 @@ const Hero = () => {
       <article
         id="greeting-words"
         style={{ width: "100%", height: "100%", position: "relative" }}
-        className="h-dvh"
       >
-        <h1 class="py-10 font-semibold absolute inset-y-25 start-1/16 whitespace-pre-line text-5xl/16 tracking-wide">
+        <h1 class="py-10 font-semibold absolute inset-y-10 md:inset-y-25 start-1/16 whitespace-pre-line text-5xl/16 tracking-wide">
           <Typewriter
             words={[
               "Hi, I'm Alan\nI'm an Informatics Engineering Student\nin State University of Semarang.",
