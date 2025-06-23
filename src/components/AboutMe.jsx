@@ -5,9 +5,11 @@ import ScrollVelocity from "../kit/TextAnimations/ScrollVelocity/ScrollVelocity.
 const AboutMe = () => {
   return (
     <div id="about">
-      <div class="w-auto border-y-2 border-y-gray-800 py-4 mt-30">
+      <div class="w-auto text-white bg-black py-4 mt-30">
         <ScrollVelocity
-          texts={["OTW Fullstack Developer 🤖 "]}
+          texts={[
+            "Fullstack Web Developer ⚪ UI/UX Design ⚪ Graphic Design ⚪ Photography ⚪ Mobile Developer ⚪",
+          ]}
           velocity={100}
           className="custom-scroll-text"
         />
