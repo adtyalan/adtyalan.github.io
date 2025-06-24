@@ -1,46 +1,58 @@
-/*
-	Installed from https://reactbits.dev/tailwind/
-*/
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 const ShinyText = ({ text, disabled = false, speed = 5, className = "" }) => {
   const animationDuration = `${speed}s`;
+  const controls = useAnimation();
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start({
+            x: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            transition: { duration: 1, ease: "easeOut" },
+          });
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [controls]);
 
   return (
-    <div
-      className={`text-[#b5b5b5a4] bg-clip-text inline-block ${
-        disabled ? "" : "animate-shine"
-      } ${className}`}
-      style={{
-        backgroundImage:
-          "linear-gradient(120deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 60%)",
-        backgroundSize: "200% 100%",
-        WebkitBackgroundClip: "text",
-        animationDuration: animationDuration,
-        fontSize: "2rem",
-        fontWeight: "bold",
-      }}
+    <motion.div
+      ref={ref}
+      initial={{ x: -60, opacity: 0, filter: "blur(10px)" }}
+      animate={controls}
+      className={`
+        bg-radial-[at_50%_5%] from-neutral-300 via-zinc-800 to-black
+        inline-block
+        px-4 py-2 rounded-full
+        ${className}
+      `}
     >
-      {text}
-    </div>
+      <span
+        className={`
+          bg-clip-text text-transparent
+          ${disabled ? "" : "animate-shine"}
+        `}
+        style={{
+          backgroundImage:
+            "linear-gradient(120deg, #b5b5b5 30%, #ffffff 50%, #b5b5b5 70%)",
+          backgroundSize: "200% 100%",
+          WebkitBackgroundClip: "text",
+          animationDuration: animationDuration,
+        }}
+      >
+        {text}
+      </span>
+    </motion.div>
   );
 };
 
 export default ShinyText;
-
-// tailwind.config.js
-// module.exports = {
-//   theme: {
-//     extend: {
-//       keyframes: {
-//         shine: {
-//           '0%': { 'background-position': '100%' },
-//           '100%': { 'background-position': '-100%' },
-//         },
-//       },
-//       animation: {
-//         shine: 'shine 5s linear infinite',
-//       },
-//     },
-//   },
-//   plugins: [],
-// };

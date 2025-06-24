@@ -19,8 +19,8 @@ const NavBar = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-10 px-4 pt-4 md:px-6 md:pt-6">
-        <div className="bg-white w-full flex justify-between items-baseline py-5 px-6 sticky top-0 border-2 border-gray-200 rounded-full">
+      <header className="sticky top-0 z-20 px-4 pt-4 md:px-6 md:pt-6">
+        <div className="bg-white w-full flex justify-between items-baseline py-5 px-6 sticky top-0 rounded-full shadow-md">
           <div className="logo">
             <Link to="/">
               <h2 className="font-semibold">Alan Aditya.</h2>
