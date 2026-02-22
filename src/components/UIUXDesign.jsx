@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import NavBar from "./NavBar";
 import Footer from "./Footer";
 
 const UIUXDesign = () => {
@@ -16,7 +15,6 @@ const UIUXDesign = () => {
 
   return (
     <>
-      <NavBar></NavBar>
       <article id="portfolio" class="parent-card">
         {/* Photography Section */}
         <section id="uiux-design" class="child-first-card mb-12">

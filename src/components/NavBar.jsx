@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import GooeyNav from "../kit/Components/GooeyNav/GooeyNav";
 
 const NavBar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const location = useLocation();
+
+  const navItems = [
+    { label: "Projects", href: "/graphic" },
+    { label: "About", href: "/" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  // Determine active index based on current path
+  const getActiveIndex = () => {
+    const projectsPaths = ["/graphic", "/photography", "/uiux", "/web"];
+    if (projectsPaths.includes(location.pathname)) return 0;
+    if (location.pathname === "/") return 1;
+    return 1; // Default to About
+  };
 
   const toggleDrawer = () => {
     setIsDrawerOpen((prev) => !prev);
@@ -20,90 +36,70 @@ const NavBar = () => {
   return (
     <>
       <header className="sticky top-0 z-20 px-4 pt-4 md:px-6 md:pt-6">
-        <div className="bg-white w-full flex justify-between items-baseline py-5 px-6 sticky top-0 rounded-full shadow-md">
-          <div className="logo">
-            <Link to="/">
-              <h2 className="font-semibold">Alan Aditya.</h2>
+        <div className="bg-white w-full flex justify-between items-center py-2 px-6 rounded-full shadow-md overflow-hidden">
+          <div className="logo cursor-pointer">
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <h2 className="font-semibold text-lg">Alan Aditya.</h2>
             </Link>
           </div>
-          {/* Ikon hamburger hanya tampil di mobile */}
+          
+          {/* Mobile hamburger */}
           <div className="md:hidden">
-            <button onClick={toggleDrawer} className="text-2xl">
+            <button onClick={toggleDrawer} className="text-2xl p-2">
               &#9776;
             </button>
           </div>
-          {/* Menu navigasi tampil di breakpoint sm ke atas */}
+
+          {/* GooeyNav for Desktop */}
           <nav className="nav-list hidden md:block">
-            <ul className="flex justify-center gap-18">
-              <li className="list-none">
-                <Link
-                  to="/graphic"
-                  className="py-2 px-6 rounded-full no-underline font-normal text-black transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:shadow-lg"
-                >
-                  Projects
-                </Link>
-              </li>
-              <li className="list-none">
-                <Link
-                  to="/"
-                  className="py-2 px-6 rounded-full no-underline font-normal text-black transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:shadow-lg"
-                >
-                  About
-                </Link>
-              </li>
-              <li className="list-none">
-                <a
-                  href="#contact"
-                  className="py-2 px-6 rounded-full no-underline font-normal text-black transition-all duration-300 ease-in-out hover:bg-black hover:text-white hover:shadow-lg"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
+            <GooeyNav 
+              items={navItems} 
+              initialActiveIndex={getActiveIndex()} 
+            />
           </nav>
         </div>
       </header>
-      {/* Offcanvas Drawer untuk mobile */}
+
+      {/* Offcanvas Drawer for mobile */}
       {isDrawerOpen && (
-        <div className="fixed inset-0 z-11 flex bg-white">
-          <div className="absolute top-11 right-7 flex justify-end items-start w-full h-full pr-4">
-            <button className="bg-white w-fit mb-4" onClick={toggleDrawer}>
-              <img src="/icons/cross.svg" alt="close" className="w-4 h-4" />
+        <div className="fixed inset-0 z-30 flex bg-white animate-in fade-in duration-300">
+          <div className="absolute top-11 right-7 flex justify-end items-start">
+            <button className="p-2" onClick={toggleDrawer}>
+              <img src="/icons/cross.svg" alt="close" className="w-6 h-6" />
             </button>
           </div>
           <div
-            className="absolute top-[77px] right-0 w-screen bg-white py-6 px-6 flex-none flex flex-col justify-start items-start"
-            style={{ height: "calc(100% - 77px)" }}
+            className="w-full h-full bg-white py-20 px-10 flex flex-col justify-start items-start"
           >
-            <ul className="w-full flex flex-col gap-4 font-medium px-4 py-10">
-              <li className="flex flex-row justify-between items-center">
-                <Link to="/graphic" onClick={toggleDrawer}>
+            <ul className="w-full flex flex-col gap-8 font-medium text-2xl">
+              <li className="flex flex-row justify-between items-center border-b pb-4">
+                <Link to="/graphic" onClick={() => { toggleDrawer(); window.scrollTo(0, 0); }}>
                   Projects
                 </Link>
                 <img
                   src="/icons/arrow-up-right.svg"
                   alt="arrow"
-                  className="w-4 h-4"
+                  className="w-6 h-6 opacity-50"
                 />
               </li>
-              <li className="flex flex-row justify-between items-center">
-                <a href="/#about" onClick={toggleDrawer}>
+              <li className="flex flex-row justify-between items-center border-b pb-4">
+                <Link to="/" onClick={() => { toggleDrawer(); window.scrollTo(0, 0); }}>
                   About
-                </a>
+                </Link>
                 <img
-                  src="../public/icons/arrow-up-right.svg"
+                  src="/icons/arrow-up-right.svg"
                   alt="arrow"
-                  className="w-4 h-4"
+                  className="w-6 h-6 opacity-50"
                 />
               </li>
-              <li className="flex flex-row justify-between items-center">
+              <li className="flex flex-row justify-between items-center border-b pb-4">
                 <a href="#contact" onClick={toggleDrawer}>
                   Contact
                 </a>
                 <img
-                  src="../public/icons/arrow-up-right.svg"
+                  src="/icons/arrow-up-right.svg"
                   alt="arrow"
-                  className="w-4 h-4"
+                  className="w-6 h-6 opacity-50"
                 />
               </li>
             </ul>
@@ -115,3 +111,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+

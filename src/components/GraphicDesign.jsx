@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "./NavBar";
 import AboutMe from "./AboutMe";
 import Footer from "./Footer";
 
@@ -47,7 +46,6 @@ const GraphicDesign = () => {
 
   return (
     <>
-      <NavBar></NavBar>
       <article id="portfolio" class="parent-card">
         <h2 class="text-xl font-semibold">Graphic Design</h2>
 
