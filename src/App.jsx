@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
@@ -5,7 +6,7 @@ import Portfolio from "./components/GraphicDesign";
 import Photography from "./components/Photography";
 import UIUXDesign from "./components/UIUXDesign";
 import Web from "./components/Web";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
   return (
