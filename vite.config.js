@@ -33,5 +33,5 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/adtyalan.github.io/',
+  base: '/',
 });
