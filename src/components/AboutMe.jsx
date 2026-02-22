@@ -18,7 +18,7 @@ const AboutMe = () => {
         <section class="child-first-card-v2">
           <div class="flex flex-col m-10 justify-center items-center gap-4 mb-4">
             <img
-              src="../src/assets/image/IMG_20230214_093208.jpg"
+              src="/image/IMG_20230214_093208.jpg"
               alt=""
               class="object-cover w-32 h-32 rounded-full shadow-xl/10"
             />

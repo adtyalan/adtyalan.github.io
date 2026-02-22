@@ -5,12 +5,12 @@ import Footer from "./Footer";
 
 const UIUXDesign = () => {
   const uiuxImages = [
-    { src: "../src/assets/image/Portfolio Foto/1660654478867.jpg" },
-    { src: "../src/assets/image/Portfolio Foto/2019-06-26 01.13.28 1.jpg" },
-    { src: "../src/assets/image/Portfolio Foto/IMG_20221111_172822.jpg" },
-    { src: "../src/assets/image/Portfolio Foto/2019-11-20 07.59.41 1.jpg" },
-    { src: "../src/assets/image/Portfolio Foto/fotoTangan2.jpg" },
-    { src: "../src/assets/image/Portfolio Foto/fotoKost3.jpg" },
+    { src: "/image/Portfolio Foto/1660654478867.jpg" },
+    { src: "/image/Portfolio Foto/2019-06-26 01.13.28 1.jpg" },
+    { src: "/image/Portfolio Foto/IMG_20221111_172822.jpg" },
+    { src: "/image/Portfolio Foto/2019-11-20 07.59.41 1.jpg" },
+    { src: "/image/Portfolio Foto/fotoTangan2.jpg" },
+    { src: "/image/Portfolio Foto/fotoKost3.jpg" },
   ];
 
   return (

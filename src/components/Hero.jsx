@@ -47,7 +47,7 @@ const Hero = () => {
         >
           <TiltedCard
             className="w-full h-full"
-            imageSrc="../src/assets/image/IMG_20230214_093208.jpg"
+            imageSrc="/image/IMG_20230214_093208.jpg"
             altText="Kendrick Lamar - GNX Album Cover"
             captionText="Alan Aditya"
             containerHeight="100%"
