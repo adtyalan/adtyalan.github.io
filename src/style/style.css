@@ -2,6 +2,7 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
 @theme {
   --font-poppins: "Poppins", "sans-serif";
   @keyframes shine {
@@ -30,6 +31,31 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  color: #18181b;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background-color: #09090b;
+  color: #f4f4f5;
+}
+
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.05;
+  z-index: 9999;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
+.dark .noise {
+  opacity: 0.07;
+  filter: invert(1);
 }
 
 .page1 {
@@ -66,20 +92,34 @@ article h2 {
 }
 
 .child-first-card {
-  border-radius: 20px;
-  padding: 20px;
-  background-color: rgb(242, 242, 242);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 24px;
+  padding: 24px;
+  background-color: #f4f4f5;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
   flex-grow: 1;
 }
 
+.dark .child-first-card {
+  background-color: #18181b;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
 .child-first-card-v2 {
-  border-radius: 20px;
-  padding: 20px;
-  background-color: rgb(242, 242, 242);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 24px;
+  padding: 24px;
+  background-color: #f4f4f5;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.dark .child-first-card-v2 {
+  background-color: #18181b;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
 
 .portfolio-container {

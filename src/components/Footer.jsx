@@ -15,13 +15,12 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      class="w-full flex flex-col py-4 gap-8 pb-25 px-30 sm:flex-row sm:justify-between"
+      className="w-full flex flex-col py-10 gap-8 pb-32 px-6 md:px-30 sm:flex-row sm:justify-between border-t border-zinc-100 dark:border-zinc-900 mt-20"
     >
-      <p className="w-full sm:w-fit text-center">
+      <p className="w-full sm:w-fit text-center text-zinc-600 dark:text-zinc-400 font-medium">
         Made with{" "}
         <span
-          className="inline-block relative overflow-hidden align-middle"
-          style={{ height: "1.5em" }} // Naikkan ukuran container bila perlu
+          className="inline-block relative overflow-hidden align-middle w-5 h-6"
         >
           <AnimatePresence mode="wait">
             {showHeart ? (
@@ -31,7 +30,7 @@ const Footer = () => {
                 animate={{ y: "0%", opacity: 1 }}
                 exit={{ y: "-100%", opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="block" // Gunakan block agar mengikuti alur teks
+                className="block"
               >
                 ❤️
               </motion.span>
@@ -42,7 +41,7 @@ const Footer = () => {
                 animate={{ y: "0%", opacity: 1 }}
                 exit={{ y: "-100%", opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="block"
+                className="block text-[10px] font-black"
               >
                 LOVE
               </motion.span>

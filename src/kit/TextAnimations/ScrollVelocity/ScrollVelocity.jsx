@@ -107,7 +107,7 @@ export const ScrollVelocity = ({
     for (let i = 0; i < (numCopies ?? 1); i++) {
       spans.push(
         <span
-          className={`flex-shrink-0 ${className}`}
+          className={`flex-shrink-0 text-[inherit] ${className}`}
           key={i}
           ref={i === 0 ? copyRef : null}
         >
@@ -122,7 +122,7 @@ export const ScrollVelocity = ({
         style={parallaxStyle}
       >
         <motion.div
-          className={`${scrollerClassName} flex whitespace-nowrap text-center font-sans text-4xl font-bold tracking-[-0.02em] drop-shadow md:text-[3rem] md:leading-[5rem]`}
+          className={`${scrollerClassName} flex whitespace-nowrap text-center font-sans tracking-tight md:leading-[5rem]`}
           style={{ x, ...scrollerStyle }}
         >
           {spans}

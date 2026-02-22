@@ -87,10 +87,14 @@ const BlurText = ({
   return (
     <div ref={ref} className={`blur-text ${className}`}>
       {lines.map((line, lineIndex) => {
-        const segments =
-          animateBy === "words" ? line.split(" ") : line.split("");
+        const segments = useMemo(() => {
+          if (animateBy === "words") return line.split(" ");
+          if (animateBy === "line") return [line];
+          return line.split("");
+        }, [line]);
+
         return (
-          <p key={lineIndex} className="flex flex-wrap">
+          <p key={lineIndex} className="flex flex-wrap text-[inherit] justify-center md:justify-start">
             {segments.map((segment, segmentIndex) => {
               const animateKeyframes = buildKeyframes(
                 fromSnapshot,

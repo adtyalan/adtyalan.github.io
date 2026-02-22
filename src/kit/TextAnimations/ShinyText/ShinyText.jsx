@@ -27,23 +27,15 @@ const ShinyText = ({ text, disabled = false, speed = 5, className = "" }) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ x: -60, opacity: 0, filter: "blur(10px)" }}
+      initial={{ x: -20, opacity: 0, filter: "blur(10px)" }}
       animate={controls}
-      className={`
-        bg-radial-[at_50%_5%] from-neutral-300 via-zinc-800 to-black
-        inline-block
-        px-4 py-2 rounded-full
-        ${className}
-      `}
+      className={`inline-block ${className}`}
     >
       <span
-        className={`
-          bg-clip-text text-transparent
-          ${disabled ? "" : "animate-shine"}
-        `}
+        className={`${disabled ? "" : "animate-shine"} bg-clip-text text-transparent`}
         style={{
           backgroundImage:
-            "linear-gradient(120deg, #b5b5b5 30%, #ffffff 50%, #b5b5b5 70%)",
+            "linear-gradient(120deg, currentColor 30%, rgba(255,255,255,0.8) 50%, currentColor 70%)",
           backgroundSize: "200% 100%",
           WebkitBackgroundClip: "text",
           animationDuration: animationDuration,

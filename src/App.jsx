@@ -10,7 +10,8 @@ import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
   return (
-    <>
+    <div className="min-h-screen transition-colors duration-300">
+      <div className="noise"></div>
       <ScrollToTop />
       <NavBar />
       <Routes>
@@ -22,7 +23,7 @@ function App() {
         {/* Add a 404 Not Found route if necessary */}
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
-    </>
+    </div>
   );
 }
 

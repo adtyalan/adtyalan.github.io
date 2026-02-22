@@ -16,9 +16,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script>
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
   </head>
 
-  <body class="font-sans" id="root">
+  <body class="font-sans bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300" id="root">
     <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>
