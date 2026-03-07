@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="w-full flex flex-col py-10 gap-8 pb-32 px-6 md:px-30 sm:flex-row sm:justify-between border-t border-zinc-100 dark:border-zinc-900 mt-20"
+      className="w-full flex flex-col py-10 gap-8 pb-32 px-6 md:px-30 sm:flex-row sm:justify-between border-t border-zinc-200 dark:border-zinc-900 mt-20"
     >
       <p className="w-full sm:w-fit text-center text-zinc-600 dark:text-zinc-400 font-medium">
         Made with{" "}

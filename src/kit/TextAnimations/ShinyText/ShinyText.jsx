@@ -1,7 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-const ShinyText = ({ text, disabled = false, speed = 5, className = "" }) => {
+const ShinyText = ({ text, disabled = false, speed = 5, className = "", textColor = "#b5b5b5a4", shineColor = "white" }) => {
   const animationDuration = `${speed}s`;
   const controls = useAnimation();
   const ref = useRef(null);
@@ -35,7 +35,7 @@ const ShinyText = ({ text, disabled = false, speed = 5, className = "" }) => {
         className={`${disabled ? "" : "animate-shine"} bg-clip-text text-transparent`}
         style={{
           backgroundImage:
-            "linear-gradient(120deg, currentColor 30%, rgba(255,255,255,0.8) 50%, currentColor 70%)",
+            `linear-gradient(120deg, ${textColor} 40%, ${shineColor} 50%, ${textColor} 60%)`,
           backgroundSize: "200% 100%",
           WebkitBackgroundClip: "text",
           animationDuration: animationDuration,

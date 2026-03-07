@@ -29,12 +29,12 @@ const Skills = () => {
     {
       icon: Code2,
       title: "Web Development",
-      skills: ["React", "Next.js", "Tailwind CSS", "Node.js", "Vite", "Express"]
+      skills: ["React", "Next.js", "Tailwind CSS", "Node.js", "Vite", "React Native", "Expo", "FastAPI", "Streamlit"]
     },
     {
       icon: Palette,
       title: "Design",
-      skills: ["UI/UX Design", "Graphic Design", "Figma", "Photoshop", "Illustrator"]
+      skills: ["UI/UX Design", "Graphic Design", "Figma", "Canva", "Capcut"]
     },
     {
       icon: Camera,
@@ -44,7 +44,7 @@ const Skills = () => {
     {
       icon: Database,
       title: "Backend & Tools",
-      skills: ["MySQL", "PostgreSQL", "Git", "Docker", "REST API", "Firebase"]
+      skills: ["MySQL", "PostgreSQL", "Git", "Docker", "REST API", "Firebase", "Nginx"]
     }
   ];
 
@@ -61,7 +61,7 @@ const Skills = () => {
             </p>
           </div>
           <div className="hidden md:block">
-             <div className="text-8xl font-black opacity-[0.03] dark:opacity-[0.05] select-none pointer-events-none absolute -right-10">
+             <div className="text-8xl font-black opacity-[0.07] dark:opacity-[0.05] select-none pointer-events-none absolute -right-10">
                SKILLS
              </div>
           </div>

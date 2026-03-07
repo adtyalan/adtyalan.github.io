@@ -8,7 +8,7 @@ const Navigate = () => {
     <>
     <div className="relative py-20 px-6 overflow-hidden">
       {/* Background Decorative Text */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-black opacity-[0.02] dark:opacity-[0.04] whitespace-nowrap select-none pointer-events-none z-0">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-black opacity-[0.07] dark:opacity-[0.04] whitespace-nowrap select-none pointer-events-none z-0">
         CREATIVE WORKS
       </div>
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import GooeyNav from "../kit/Components/GooeyNav/GooeyNav";
 import DarkModeToggle from "./DarkModeToggle";
 
@@ -110,9 +111,9 @@ const NavBar = () => {
                 <img src="/icons/arrow-up-right.svg" alt="arrow" className="w-6 h-6 opacity-30 dark:invert" />
               </li>
               <li className="flex flex-row justify-between items-center border-b border-zinc-100 dark:border-zinc-900 pb-4">
-                <a href="#contact" onClick={toggleDrawer}>
+                <HashLink smooth to="/#contact" onClick={toggleDrawer}>
                   Contact
-                </a>
+                </HashLink>
                 <img src="/icons/arrow-up-right.svg" alt="arrow" className="w-6 h-6 opacity-30 dark:invert" />
               </li>
             </ul>

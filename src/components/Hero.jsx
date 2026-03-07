@@ -48,9 +48,15 @@ const Hero = () => {
                   "_blank"
                 );
               }}
-              className="cursor-pointer group relative px-6 md:px-8 py-2 md:py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-2xl font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-zinc-200 dark:shadow-none"
+              className="cursor-pointer group relative px-6 md:px-8 py-2 md:py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-2xl font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-zinc-200 dark:shadow-none [--shine-color:white] dark:[--shine-color:black] [--base-color:rgba(255,255,255,0.7)] dark:[--base-color:rgba(24,24,27,0.7)]"
             >
-              <ShinyText text="Hire me" speed={3} className="text-white dark:text-zinc-900" />
+              <ShinyText 
+                text="Hire me" 
+                speed={3} 
+                className="" 
+                textColor="var(--base-color)"
+                shineColor="var(--shine-color)"
+              />
             </button>
             <a 
               href="#about"
@@ -87,7 +93,7 @@ const Hero = () => {
           />
           {/* Decorative tag for photo */}
           <div className="absolute -bottom-4 -left-4 md:-left-8 bg-zinc-900 dark:bg-zinc-900 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-xl border border-zinc-800 rotate-[-4deg] z-20">
-             <p className="text-[10px] md:text-xs font-semibold text-zinc-500">EST. 2004</p>
+             <p className="text-[10px] md:text-xs font-semibold text-zinc-500">EST. 2023</p>
              <p className="font-bold text-sm md:text-base text-white uppercase tracking-tight">Alan Aditya</p>
           </div>
         </motion.div>
